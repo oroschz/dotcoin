@@ -36,3 +36,9 @@ class Book:
     context: Context
     bids: List[Order]
     asks: List[Order]
+
+
+@dataclass
+class Table:
+    header: List[str]
+    content: List[List[str]]
