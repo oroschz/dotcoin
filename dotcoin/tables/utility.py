@@ -1,5 +1,7 @@
-from itertools import groupby
 from collections import Counter
+from itertools import groupby
+
+from beautifultable import BeautifulTable
 
 from dotcoin.core.types import Table
 
@@ -53,3 +55,18 @@ class KeyTable:
         header = self.content_header
         body = self.content_body
         return Table(header, body)
+
+
+def print_table(table: Table) -> str:
+    echo = BeautifulTable(detect_numerics=False)
+    echo.columns.header = table.header
+    for row in table.content:
+        echo.rows.append(row)
+
+    echo.columns.alignment = BeautifulTable.ALIGN_LEFT
+    echo.set_style(BeautifulTable.STYLE_BOX)
+    echo.columns.header.separator = '═'
+    echo.border.header_left = '╞'
+    echo.border.header_right = '╡'
+    echo.columns.header.junction = '╪'
+    return str(echo)
