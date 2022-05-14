@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "dotcoin"
 version = "0.1.0"
-description = ""
+description = "A lightweight currency tracker built with care, and Python."
 authors = ["Orlando Ospino Sánchez <oroschz@outlook.com>"]
 license = "MIT"
 readme = "README.md"
@@ -9,15 +9,10 @@ repository = "https://github.com/oroschz/dotcoin"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-ccxt = "^1.47.3"
-six = "^1.15.0"
-beautifultable = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-
-[tool.poetry.scripts]
-"dotcoin" = "dotcoin.__main__:main"
+pytest = "^7.1.2"
+mypy = "^0.950"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
